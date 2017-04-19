@@ -20,7 +20,7 @@ public class Mocha extends CondimentDeco {
 	@Override
 	public String getDesc() {
 		// TODO Auto-generated method stub
-		return this.beverage.getDesc() + "deco: mocha";
+		return this.beverage.getDesc() + "+ Deco: mocha";
 	}
 
 }
