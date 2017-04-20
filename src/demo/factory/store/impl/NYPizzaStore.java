@@ -1,23 +1,28 @@
 package demo.factory.store.impl;
 
+import demo.factory.ingredient.factory.PizzaIngredientFactory;
+import demo.factory.ingredient.factory.impl.NYIngreFactory;
 import demo.factory.pizza.Pizza;
 import demo.factory.pizza.impl.NYPizzaTypeA;
 import demo.factory.pizza.impl.NYPizzaTypeB;
 import demo.factory.store.PizzaStore;
 
 public class NYPizzaStore extends PizzaStore {
-	Pizza pizza;
 	@Override
 	public Pizza createPizza(String type) {
 		// TODO Auto-generated method stub
-		if("typeA".equalsIgnoreCase(type)){
-			this.pizza = new NYPizzaTypeA();
+		Pizza pizza = null;
+		PizzaIngredientFactory  ingreFactory = new NYIngreFactory();
+		if("typeA".equalsIgnoreCase(type)) {
+			pizza = new NYPizzaTypeA(ingreFactory);
+			pizza.setType("NY type A");
 		}
-		else if("typeB".equalsIgnoreCase(type)) {
-			this.pizza = new NYPizzaTypeB();
+		if("typeB".equalsIgnoreCase(type)) {
+			pizza = new NYPizzaTypeB(ingreFactory);
+			pizza.setType("NY type B");
 		}
-		else this.pizza = null;
-		return this.pizza;
+		
+		return pizza;
 	}
 
 }

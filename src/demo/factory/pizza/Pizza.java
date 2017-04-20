@@ -1,41 +1,36 @@
 package demo.factory.pizza;
 
+import demo.factory.ingredient.cheese.Cheese;
+import demo.factory.ingredient.dough.Dough;
+import demo.factory.ingredient.sauce.Sauce;
+
 public abstract class Pizza {
 	String type;
-	String dough;
-	String sauce;
+	public Dough dough;
+	public Sauce sauce;
+	public Cheese cheese;
 	
+
 	public String getType() {
 		return type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	public String getDough() {
-		return dough;
-	}
-	public void setDough(String dough) {
-		this.dough = dough;
-	}
-	public String getSauce() {
-		return sauce;
-	}
-	public void setSauce(String sauce) {
-		this.sauce = sauce;
-	}
-	public void prepare(){
-		System.out.println("->");
-		System.out.println("prepare pz");
-	}
-	public void bake(){
+
+	public abstract void prepare();
+
+	public void bake() {
 		System.out.println("bake pz");
 	}
-	public void cut(){
+
+	public void cut() {
 		System.out.println("cut pz");
 	}
-	public void box(){
+
+	public void box() {
 		System.out.println("box pz");
 	}
-	
+
 }

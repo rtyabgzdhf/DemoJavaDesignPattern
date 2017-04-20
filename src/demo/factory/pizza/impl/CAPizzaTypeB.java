@@ -3,9 +3,9 @@ package demo.factory.pizza.impl;
 import demo.factory.ingredient.factory.PizzaIngredientFactory;
 import demo.factory.pizza.Pizza;
 
-public class CHPizzaTypeB extends Pizza {
+public class CAPizzaTypeB extends Pizza {
 	PizzaIngredientFactory factory;
-	public CHPizzaTypeB(PizzaIngredientFactory f) {
+	public CAPizzaTypeB(PizzaIngredientFactory f) {
 		super();
 		// TODO Auto-generated constructor stub
 		this.factory = f;

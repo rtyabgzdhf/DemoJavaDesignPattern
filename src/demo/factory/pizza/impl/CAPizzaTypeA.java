@@ -1,13 +1,21 @@
 package demo.factory.pizza.impl;
 
+import demo.factory.ingredient.factory.PizzaIngredientFactory;
 import demo.factory.pizza.Pizza;
 
 public class CAPizzaTypeA extends Pizza {
-	public CAPizzaTypeA() {
+	PizzaIngredientFactory factory;
+	public CAPizzaTypeA(PizzaIngredientFactory f) {
 		super();
 		// TODO Auto-generated constructor stub
-		this.setType("CA type A");
-		this.setDough("Thin blah");
-		this.setSauce("H2SO4 + HNO3");
+		this.factory = f;
+	}
+	@Override
+	public void prepare() {
+		// TODO Auto-generated method stub
+		System.out.println("prepare:" + this.getType());
+		this.dough = factory.createDough();
+		this.sauce = factory.createSauce();
+		this.cheese = factory.createCheese();
 	}
 }

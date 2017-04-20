@@ -1,5 +1,7 @@
 package demo.factory.store.impl;
 
+import demo.factory.ingredient.factory.PizzaIngredientFactory;
+import demo.factory.ingredient.factory.impl.CHIngreFactory;
 import demo.factory.pizza.Pizza;
 import demo.factory.pizza.impl.CHPizzaTypeA;
 import demo.factory.pizza.impl.CHPizzaTypeB;
@@ -7,21 +9,24 @@ import demo.factory.pizza.impl.CHPizzaTypeC;
 import demo.factory.store.PizzaStore;
 
 public class CHPizzaStore extends PizzaStore {
-	Pizza pizza;
 	@Override
 	public Pizza createPizza(String type) {
 		// TODO Auto-generated method stub
-		if("typeA".equalsIgnoreCase(type)){
-			this.pizza = new CHPizzaTypeA();
+		Pizza pizza = null;
+		PizzaIngredientFactory  ingreFactory = new CHIngreFactory();
+		if("typeA".equalsIgnoreCase(type)) {
+			pizza = new CHPizzaTypeA(ingreFactory);
+			pizza.setType("CH type A");
 		}
-		else if("typeB".equalsIgnoreCase(type)) {
-			this.pizza = new CHPizzaTypeB();
+		if("typeB".equalsIgnoreCase(type)) {
+			pizza = new CHPizzaTypeB(ingreFactory);
+			pizza.setType("CH type B");
 		}
-		else if("typeC".equalsIgnoreCase(type)) {
-			this.pizza = new CHPizzaTypeC();
+		if("typeC".equalsIgnoreCase(type)) {
+			pizza = new CHPizzaTypeC(ingreFactory);
+			pizza.setType("CH type C");
 		}
-		else this.pizza = null;
-		return this.pizza;
+		return pizza;
 	}
 
 }
