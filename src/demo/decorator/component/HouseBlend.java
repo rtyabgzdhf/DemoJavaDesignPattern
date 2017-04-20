@@ -16,4 +16,16 @@ public class HouseBlend implements IBeverage {
 		return 0.89;
 	}
 
+	@Override
+	public String getSize() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setSize(String s) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

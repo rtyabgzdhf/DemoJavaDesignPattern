@@ -10,6 +10,9 @@ public class StarbuzzCafe {
 		IBeverage b1 = new HouseBlend();
 		System.out.println(b1.getDesc() + "->" + b1.cost());
 		b1 = new Mocha(b1);
+		b1.setSize("S");
+		System.out.println(b1.getDesc() + "->" + b1.cost());
+		b1.setSize("M");
 		System.out.println(b1.getDesc() + "->" + b1.cost());
 	}
 
