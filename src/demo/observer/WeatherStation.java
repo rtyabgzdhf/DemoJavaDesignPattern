@@ -5,6 +5,7 @@ import demo.observer.display.impl.HeatIndexDisplay;
 import demo.observer.display.impl.JavaDisplayTypeA;
 import demo.observer.subject.impl.JavaWeatherData;
 import demo.observer.subject.impl.WeatherData;
+import demo.singleton.TestSingleton;
 
 public class WeatherStation {
 
@@ -32,6 +33,11 @@ public class WeatherStation {
 		DisplayTypeB displayTypeB = new DisplayTypeB();
 		displayTypeB.setObservable(jdataSrc1);		
 		jdataSrc1.setMeasurements(35 , 84, 177);
+		
+		System.out.println("=Test singleton as a global access point=");
+		TestSingleton calculate = TestSingleton.getInstance();
+		System.out.println("plus:" + calculate.plus(15, 20));
+		System.out.println("plus:" + calculate.getPi());
 	}
 
 }
