@@ -2,7 +2,7 @@ package demo.singleton;
 
 
 public class ChocolateBoiler {
-	private static ChocolateBoiler boiler = new ChocolateBoiler();
+	private volatile static ChocolateBoiler boiler = new ChocolateBoiler();
 	boolean empty;
 	boolean boiled;
 	
@@ -13,6 +13,18 @@ public class ChocolateBoiler {
 	
 	public static ChocolateBoiler getInstance() {
 		return ChocolateBoiler.boiler;
+	}
+	
+	public static ChocolateBoiler getVolatileInstance() {
+		if(boiler == null) {
+			synchronized (ChocolateBoiler.class) {
+				if(boiler == null) {
+					boiler = new ChocolateBoiler();
+				}
+			}
+		}
+		return boiler;
+		
 	}
 
 	public boolean isEmpty() {
