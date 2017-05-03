@@ -1,26 +1,19 @@
 package demo.command.command.impl;
 
 import demo.command.command.ICommand;
-import demo.command.receiver.Light;
 
-public class LightOnCommand implements ICommand {
-	Light light;
-
-	public LightOnCommand(Light light) {
-		super();
-		this.light = light;
-	}
+public class NoCommand implements ICommand{
 
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		light.on();
+		System.out.println("do nothing");
 	}
 
 	@Override
 	public void undo() {
 		// TODO Auto-generated method stub
-		light.off();
+		
 	}
 
 }

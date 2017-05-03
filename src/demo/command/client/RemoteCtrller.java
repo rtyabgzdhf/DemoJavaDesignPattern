@@ -13,7 +13,7 @@ public class RemoteCtrller {
 		// TODO Auto-generated method stub
 		SimpleRemoteCtrl ctrl = new SimpleRemoteCtrl();
 		
-		Light l = new Light();
+		Light l = new Light("");
 		LightOnCommand lightOn = new LightOnCommand(l);
 		
 		ctrl.setSlot(lightOn);

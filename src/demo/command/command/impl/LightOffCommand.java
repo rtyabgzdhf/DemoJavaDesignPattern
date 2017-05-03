@@ -3,24 +3,27 @@ package demo.command.command.impl;
 import demo.command.command.ICommand;
 import demo.command.receiver.Light;
 
-public class LightOnCommand implements ICommand {
+public class LightOffCommand implements ICommand {
 	Light light;
-
-	public LightOnCommand(Light light) {
+	
+	
+	public LightOffCommand(Light light) {
 		super();
 		this.light = light;
 	}
 
+
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-		light.on();
+		this.light.off();
 	}
+
 
 	@Override
 	public void undo() {
 		// TODO Auto-generated method stub
-		light.off();
+		this.light.on();
 	}
 
 }
