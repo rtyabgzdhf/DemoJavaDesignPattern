@@ -25,9 +25,11 @@ public class CeilingFan {
 	}
 	public void med() {
 		this.speed = MED;
+		System.out.println("med!");
 	}
 	public void low() {
 		this.speed = LOW;
+		System.out.println("low!");
 	}
 	public void off() {
 		this.speed = OFF;
