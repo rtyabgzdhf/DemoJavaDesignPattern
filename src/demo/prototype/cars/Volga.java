@@ -17,7 +17,9 @@ public class Volga extends BasicCar {
 	@Override
 	protected Volga clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
-		return (Volga) super.clone();
+		Volga v =  (Volga) super.clone();
+		v.modelname = v.modelname + "-clone";
+		return v;
 	}
 	
 }
