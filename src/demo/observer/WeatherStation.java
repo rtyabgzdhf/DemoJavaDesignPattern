@@ -34,10 +34,10 @@ public class WeatherStation {
 		displayTypeB.setObservable(jdataSrc1);		
 		jdataSrc1.setMeasurements(35 , 84, 177);
 		
-		System.out.println("=Test singleton as a global access point=");
-		TestSingleton calculate = TestSingleton.getInstance();
-		System.out.println("plus:" + calculate.plus(15, 20));
-		System.out.println("plus:" + calculate.getPi());
+//		System.out.println("=Test singleton as a global access point=");
+//		TestSingleton calculate = TestSingleton.getInstance();
+//		System.out.println("plus:" + calculate.plus(15, 20));
+//		System.out.println("plus:" + calculate.getPi());
 	}
 
 }
